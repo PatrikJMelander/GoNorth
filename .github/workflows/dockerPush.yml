@@ -30,4 +30,4 @@
           with:
             context: .
             push: true
-            tags: ${{ secrets.DOCKER_USERNAME }}/go-north:latest
+            tags: ${{ secrets.DOCKER_NAME }}/go-north:latest
