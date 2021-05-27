@@ -10,7 +10,7 @@ services:
       POSTGRES_PASSWORD: password123
 
   spring_app:
-    image: patrikjmelander/GoNorth:latest
+    image: patrikjmelander/go-north:latest
     container_name: GoNorth
     ports:
       - 8080:8080
