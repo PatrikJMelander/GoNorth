@@ -10,8 +10,8 @@ services:
       POSTGRES_PASSWORD: password123
 
   spring_app:
-    image: wakelesstuna/pedometer:latest
-    container_name: pedometer
+    image: patrikjmelander/GoNorth:latest
+    container_name: GoNorth
     ports:
       - 8080:8080
     environment:
