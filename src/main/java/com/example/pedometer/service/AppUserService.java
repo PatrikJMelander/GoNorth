@@ -98,16 +98,13 @@ public class AppUserService {
 
     public String deleteAppUserByPostman(String email) {
 
-        appUserRepository.findByEmail(email)
-                .ifPresentOrElse(appUser -> {
+        List<AppUser> usersToDelete = appUserRepository.findAllByEmail(email);
 
-                        appUserRepository.deleteById(appUser.getId());
+        for (AppUser user : usersToDelete) {
+            appUserRepository.deleteById(user.getId());
+        }
 
-                }, () -> {
-                    throw new ResponseStatusException(HttpStatus.CONFLICT, "Email does not exist");
-                });
-
-        return "User with email: " + email + " has been deleted";
+        return "Users with email: " + email + " has been deleted";
     }
     
     public String removeFromTeam(String email, String teamName) {
