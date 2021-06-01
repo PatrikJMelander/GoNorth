@@ -26,6 +26,7 @@ public class AppUser {
     private String lastName;
     private String password;
     private String email;
+    private int personalGoals;
 
     @OneToMany
     private List<Steps> steps = new ArrayList<>();
@@ -35,7 +36,8 @@ public class AppUser {
                 .setFirstName(this.firstName)
                 .setLastName(this.lastName)
                 .setEmail(this.email)
-                .setSteps(this.steps);
+                .setSteps(this.steps)
+                .setPersonalGoals(this.personalGoals);
     }
 
     public void addStepsToUser(Steps steps){

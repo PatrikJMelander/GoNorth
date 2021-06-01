@@ -80,6 +80,12 @@ public class AppUserController {
         return ResponseEntity.ok(appUserService.addStepsToUser(appUser, steps, date));
     }
 
+    @PostMapping("/add/personalGoal")
+    public ResponseEntity<AppUserResponse> addStepsToAppUser(@RequestBody AppUser appUser,
+                                                             @RequestParam int personalGoal) {
+        return ResponseEntity.ok(appUserService.addPersonalGoalToUser(appUser, personalGoal));
+    }
+
     @GetMapping("/getUserTeams")
     public ResponseEntity<List<TeamResponse>> getAllTeams(@RequestParam String email){
 
