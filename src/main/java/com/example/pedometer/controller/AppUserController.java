@@ -61,6 +61,11 @@ public class AppUserController {
         return ResponseEntity.ok(appUserService.deleteAppUser(email, password));
     }
 
+    @GetMapping("/delete/bypostman")
+    public ResponseEntity<String> deleteAppUserByPostman(@RequestParam String email) {
+        return ResponseEntity.ok(appUserService.deleteAppUserByPostman(email));
+    }
+
     @GetMapping("/get/all/steps")
     public ResponseEntity<Integer> getAllSteps(@RequestParam String email){
         return ResponseEntity.ok(appUserService.getStepsOfAppUser(email));
