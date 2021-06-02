@@ -14,4 +14,4 @@ jobs:
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "go-north" #Must be unique in Heroku
-          heroku_email: "hakimlivs@gmail.com"
+          heroku_email: "patrikjmelander@gmail.com"
