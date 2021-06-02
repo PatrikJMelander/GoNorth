@@ -38,7 +38,7 @@ public class AppUserService {
     }
 
     public AppUserResponse addAppUser(AppUser appUser) {
-
+        appUser.setPersonalGoals(10000);
         Optional<AppUser> existingAppUser = appUserRepository.findByEmail(appUser.getEmail());
 
         if (existingAppUser.isPresent()) {
@@ -225,5 +225,16 @@ public class AppUserService {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "No such user");
         }
 
+    }
+
+    public AppUserResponse addPersonalGoalToUser(String email, int personalGoal) {
+        AppUser appUser = appUserRepository.findByEmail(email)
+                .orElseThrow(() -> {
+                    throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Could not find user");
+                });
+        appUser.setPersonalGoals(personalGoal);
+        appUserRepository.save(appUser);
+
+        return appUser.toResponse();
     }
 }

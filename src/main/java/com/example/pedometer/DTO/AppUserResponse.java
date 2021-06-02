@@ -21,5 +21,7 @@ public class AppUserResponse {
 
     private String email;
 
+    private int personalGoals;
+
     private List<Steps> steps;
 }
