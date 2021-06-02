@@ -40,6 +40,7 @@ public class AppUser {
                 .setPersonalGoals(this.personalGoals);
     }
 
+
     public void addStepsToUser(Steps steps){
         this.steps.add(steps);
 
