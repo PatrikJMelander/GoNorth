@@ -227,8 +227,8 @@ public class AppUserService {
 
     }
 
-    public AppUserResponse addPersonalGoalToUser(AppUser user, int personalGoal) {
-        AppUser appUser = appUserRepository.findByEmail(user.getEmail())
+    public AppUserResponse addPersonalGoalToUser(String email, int personalGoal) {
+        AppUser appUser = appUserRepository.findByEmail(email)
                 .orElseThrow(() -> {
                     throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Could not find user");
                 });

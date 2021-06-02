@@ -81,9 +81,9 @@ public class AppUserController {
     }
 
     @PostMapping("/add/personalGoal")
-    public ResponseEntity<AppUserResponse> addStepsToAppUser(@RequestBody AppUser appUser,
+    public ResponseEntity<AppUserResponse> addStepsToAppUser(@RequestParam String email,
                                                              @RequestParam int personalGoal) {
-        return ResponseEntity.ok(appUserService.addPersonalGoalToUser(appUser, personalGoal));
+        return ResponseEntity.ok(appUserService.addPersonalGoalToUser(email, personalGoal));
     }
 
     @GetMapping("/getUserTeams")
